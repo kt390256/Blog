@@ -1,0 +1,30 @@
+<% include partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Edit Blog <%= blog.title %></div>
+    <!--When you do put request you have to do it this way, need to use npm install method-override-->
+    <form class="ui form" action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
+
+      <div class="field">
+        <label>Title</label>
+        <!--this is how to get pre-filled/priginal content when you edit-->
+        <input type="text" name="blog[title]"  value="<%= blog.title %>">
+      </div>
+
+      <div class="field">
+        <label>Image</label>
+        <!--this is how to get pre-filled/priginal content when you edit-->
+        <input type="text" name="blog[image]" value="<%= blog.image %>">
+      </div>
+
+      <div class="field">
+        <label>Blog Content</label>
+        <!--this is how to get pre-filled/priginal content when you edit-->
+      <textarea name="blog[body]" ><%= blog.body %></textarea>
+    </div>
+
+      <input class="ui purple inverted button" type="submit">
+
+  </div>
+
+<% include partials/footer %>

@@ -1,0 +1,47 @@
+
+<% include partials/header %>
+
+
+
+<!--the ui main text container will pretty much cetner everything-->
+    <div class="ui main text container">
+      <div class="ui huge header">Blog App</div>
+      <div class="ui top attached segment">
+        <div class ="ui divided items">
+          <% blogs.forEach(function(blog) { %>
+
+            <div class="item ">
+
+              <div class="image"><!--helps sizing the picture-->
+              <img src="<%= blog.image %>" >
+            </div>
+
+            <div class="content">
+              <a class="header" href="/blogs/<%= blog._id %>"><%=blog.title%></a>
+
+              <div class="meta">
+                <span>Created on <%= blog.created.toDateString()%></span>
+              </div>
+
+              <div class="description">
+                <% if(blog.body.length >50 ) { %>
+                <p><%= blog.body.substring(0, 100) %>...</p>
+                <% } else{ %>
+                  <p><%= blog.body.substring(0, 100) %></p>
+                  <% } %>
+              </div>
+
+              <div class="extra">
+                <a class="ui floated basic violet button" href="/blogs/<%= blog._id %>">
+                  Read More
+                  <i class="right chevron icon"></i>
+                </a>
+            </div>
+        </div>
+      </div>
+        <% }); %>
+      </div>
+    </div>
+</div>
+
+<% include partials/footer %>
