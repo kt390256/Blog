@@ -37,7 +37,7 @@ var Blog = mongoose.model("Blog", blogSchema);
 // Blog.create({
 //
 // title: "asd",
-// image: "http://www.myconfinedspace.com/wp-content/uploads/2016/10/a-nice-butt-by-a-refrigerator-720x899.jpg",
+// image: "",
 // body:"asd"
 //
 // });
