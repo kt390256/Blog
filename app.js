@@ -148,19 +148,18 @@ app.delete("/blogs/:id", function(req,res){
       res.redirect("/blogs");
     }
   })
-
 })
 
-
-
-
-
-
-
-
-
-
-
+//testing - to be deleted
+app.get("/blogs/:id", function(req,res){
+  Blog.findByIdAndRemove(req.params.id, function(err){
+    if(err){
+      res.redirect("/blogs");
+    }else{
+      res.redirect("/blogs");
+    }
+  })
+})
 
 
 
